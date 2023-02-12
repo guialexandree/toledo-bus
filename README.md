@@ -6,4 +6,4 @@ nesse momento deve ser exibido um mapa com a posição atual do usuário e parad
 nos detalhes da linha deve ser exibido o mapa com o itinerário completo e todas paradas, informações
 da linha e itinerário.
 
-## Figma: https://www.figma.com/file/gUHgD5Iz9IQTIaJBOG9WdX/Toledo-Bus
+## Figma: [https://www.figma.com/file/gUHgD5Iz9IQTIaJBOG9WdX/Toledo-Bus](https://www.figma.com/file/D43gOVmoUQduwvA2CXaH3z/Toledo-BUS)
