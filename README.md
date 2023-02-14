@@ -11,17 +11,17 @@ Atualmente a empresa responsável pelo transporte é a Sorriso de Toledo, dessa 
 
 Código | Requisito | RN
 --- | --- | --- |
-RF01 | Deve ser possível realizar login através de um número de celular válido | RN01, RN03 |
-RF02 | Deve ser possível filtrar por uma linha | RN02 |
-RF03 | Exibir detalhes da linha selecionada | RN02 |
-RF03 | Exibir itinerário da linha | RN02, RN03 |
-RF04 | Exibir rota da linha no mapa |  |
+RF01 | Deve ser possível realizar login através de um número de celular válido | RN01, RN02 |
+RF02 | Deve ser possível filtrar por uma linha de ônibus | RN03 |
+RF03 | Exibir detalhes da linha de ônibus selecionada | RN02 |
+RF03 | Exibir itinerário da linha de ônibus selecionada | RN02, RN03 |
+RF04 | Exibir rota da linha de ônibus no mapa |  |
 
 Código | Regra de Negócio
 --- | --- |
 RN01 | Realizar validação via SMS |
-RN02 | Referênte ao dia selecionado |
-RN03 | Solicitar número apenas no primeiro login |
+RN02 | Solicitar número apenas no primeiro login |
+RN03 | Referênte ao dia da semana selecionado |
 
 ## Telas MVP: 
 
