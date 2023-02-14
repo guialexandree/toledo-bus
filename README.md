@@ -37,6 +37,6 @@ RN04 | Armazear últimas buscas para cada usuário(localStorage) |
 
 > App
 
-![image](https://user-images.githubusercontent.com/30730216/218794287-7d4ffcc0-cf5f-47d9-9bae-4ccb656de09c.png)
+![image](https://user-images.githubusercontent.com/30730216/218795642-29ad10f6-e5bd-4345-b2fb-8b9840a384a4.png)
 ![image](https://user-images.githubusercontent.com/30730216/218602396-2ef500cf-b858-45ec-844c-9e94f0a4e6b0.png)
 ![image](https://user-images.githubusercontent.com/30730216/218602466-4106eaa0-a853-4731-aa96-580aa6a4c969.png)
