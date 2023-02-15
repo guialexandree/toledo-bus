@@ -1,0 +1,7 @@
+node_modules
+/vscode
+coverage
+dist
+*.scss
+*.js
+*.json
