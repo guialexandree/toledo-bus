@@ -14,8 +14,9 @@ Código | Requisito | RN
 RF01 | Deve ser possível realizar login através de um número de celular válido | RN01, RN02 |
 RF02 | Deve ser possível filtrar por uma linha de ônibus | RN03, RN04 |
 RF03 | Exibir detalhes da linha de ônibus selecionada | RN02 |
-RF03 | Exibir itinerário da linha de ônibus selecionada | RN02, RN03 |
-RF04 | Exibir rota da linha de ônibus no mapa |  |
+RF04 | Exibir itinerário da linha de ônibus selecionada | RN02, RN03 |
+RF05 | Exibir rota da linha de ônibus no mapa |  |
+RF06 | Exibir linhas em transito |  |
 
 Código | Regra de Negócio
 --- | --- |

@@ -1,2 +1,2 @@
-export { default as Login } from './login/login'
-export { default as SignUp } from './signup/signup'
+export { default as Splash } from './splash/splash'
+export { default as SignIn } from './signin/signin'

@@ -10,6 +10,6 @@ export const useLogout = (): ResultType => {
 
   return (): void => {
     setCurrentAccount(undefined)
-    history.replace('/login')
+    history.replace('/signin')
   }
 }

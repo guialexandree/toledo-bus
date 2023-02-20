@@ -2,8 +2,9 @@ import React from 'react'
 import { RecoilRoot } from 'recoil'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { setCurrentAccountAdapter, getCurrentAccountAdapter } from '@/main/adapters'
-import { makeLogin, makeSignUp } from '@/main/factories'
-import { currentAccountState, PrivateRoute } from '@/presentation/components'
+import { makeSplash } from '@/main/factories'
+import { currentAccountState } from '@/presentation/components'
+import { SignIn } from '@/presentation/pages'
 
 const Router: React.FC = () => {
   const state = {
@@ -15,9 +16,8 @@ const Router: React.FC = () => {
     <RecoilRoot initializeState={({ set }) => { set(currentAccountState, state) }}>
       <BrowserRouter>
         <Switch>
-          <Route path='/login' exact component={makeLogin} />
-          <Route path='/signup' exact component={makeSignUp} />
-          <PrivateRoute path='/' exact component={null}/>
+          <Route path='/' exact component={makeSplash} />
+          <Route path='/signin' exact component={SignIn} />
         </Switch>
       </BrowserRouter>
     </RecoilRoot>

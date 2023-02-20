@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+
+.signInWrap {
+  @extend .flex-center;
+	min-height: 100vh;
+  min-width: 100%;
+
+  .header {
+    @extend .flex-center;
+    background-color: $primary;
+    width: 600px;
+    max-width: 600px;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 380px;
+    flex: 1;
+    padding: 1rem;
+
+    .iconWrap {
+      transform: scale(0.7) translateY(-50px);
+    }
+  }
+
+  .content {
+    @extend .flex-center;
+    background-color: $white;
+    flex: 1;
+    flex-direction: column;
+    padding: 4rem;
+    height: 100vh;
+    gap: 8px;
+
+    .subtitle {
+      color: $grey;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 400;
+      max-width: 280px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signInWrap {
+    flex-direction: column;
+
+    .header {
+      width: 100%;
+      min-width: 100%;
+      min-height: 55vh;
+    }
+
+    .content {
+      flex: 1;
+      width: 100%;
+    }
+  }
+}
