@@ -1,0 +1,87 @@
+@import "../../styles/colors.scss";
+
+.homeWrap {
+  display: flex;
+
+  .appBar {
+    background-color: $primary;
+    width: 600px;
+    height: 100vh;
+
+    header {
+      @extend .flex-center;
+      justify-content: space-between;
+
+      display: flex;
+      position: relative;
+
+      .iconWrap {
+        margin-left: -80px;
+      }
+
+      .userWrap {
+        border-radius: 50%;
+        background-color: $white;
+        width: 60px;
+        height: 60px;
+        margin-right: 24px;
+      }
+    }
+
+    .filtersWrap {
+
+      background-color: $secondary;
+      padding: 30px 20px;
+      margin: 24px;
+      border-radius: 15px;
+      
+      select {
+        color: $primaryLight;
+        width: 100%;
+        font-size: 20px;
+        padding: 4px 12px;
+        font-weight: bold;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      fieldset {
+        & + fieldset {
+          margin-top: 1rem;
+        }
+        border: none;
+      }
+
+      .dayFilters {
+        display: flex;
+        gap: 8px;
+      }
+
+      .submit {
+        background-color: $primary;
+        margin-top: 1rem;
+        width: 100%;
+        font-size: 20px;
+        transition: all ease .3s;
+
+        &:hover {
+          background-color: darken($primary, 2%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homeWrap {
+    .appBar {
+      height: 36vh;
+
+      .filtersWrap { 
+        margin-top: 0;
+      }
+    }
+  }
+}
