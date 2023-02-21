@@ -2,9 +2,8 @@ import React from 'react'
 import { RecoilRoot } from 'recoil'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { setCurrentAccountAdapter, getCurrentAccountAdapter } from '@/main/adapters'
-import { makeSplash } from '@/main/factories'
+import { makeSignIn, makeSplash } from '@/main/factories'
 import { currentAccountState } from '@/presentation/components'
-import { SignIn } from '@/presentation/pages'
 
 const Router: React.FC = () => {
   const state = {
@@ -17,7 +16,7 @@ const Router: React.FC = () => {
       <BrowserRouter>
         <Switch>
           <Route path='/' exact component={makeSplash} />
-          <Route path='/signin' exact component={SignIn} />
+          <Route path='/signin' exact component={makeSignIn} />
         </Switch>
       </BrowserRouter>
     </RecoilRoot>
