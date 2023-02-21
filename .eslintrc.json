@@ -25,6 +25,7 @@
     "@typescript-eslint/comma-spacing": "off",
 		"@typescript-eslint/no-unused-vars": "off",
 		"@typescript-eslint/consistent-indexed-object-style": "off",
+    "@typescript-eslint/dot-notation": "off",
     "react/jsx-uses-react": "error",
 		"no-tabs": "off",
     "react/jsx-uses-vars": "error",
