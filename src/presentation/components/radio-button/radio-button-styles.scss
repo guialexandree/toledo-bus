@@ -1,0 +1,37 @@
+@import '../../styles/colors.scss';
+
+.radioButtonWrap {
+  input {
+    display: none;
+  }
+  border: none;
+  
+  img {
+    width: 16px;
+    margin-right: 0.2rem;
+  }
+
+  label {
+    font-size: 12px;
+    border: solid 1px $white;
+    color: $white;
+    border-radius: 10px;
+    padding: 4px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+
+    &.active {
+      background: linear-gradient($white, $white) padding-box;
+      border: solid 1px $primaryLight;
+      color: $greyDark;
+      font-weight: 600;
+    }
+
+    transition: all ease .3s;
+    &:hover:not(.active) {
+      border-color: $primaryLight;
+    }
+  }
+}
