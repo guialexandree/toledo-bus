@@ -1,2 +1,2 @@
-export { default as ButtonAuth } from './button-auth/button-auth'
-export { default as Authentications } from './authentications/authentications'
+export * from './atoms'
+export { default as SignInLoading } from './signin-loading'

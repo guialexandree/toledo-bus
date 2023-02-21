@@ -37,6 +37,25 @@
       font-weight: 400;
       max-width: 280px;
     }
+
+    .authWrap {
+      @extend .flex-center;
+      flex-direction: column;
+      width: 100%;
+    
+      .title1 {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+      }
+    
+      button {
+        margin-top: 1rem;
+        border: 3px solid transparent;
+        border-image: linear-gradient(to right, $purple, $primary);
+        border-image-slice: 1;
+        border-radius: 8px;
+      }
+    }
   }
 }
 
@@ -44,10 +63,17 @@
   .signInWrap {
     flex-direction: column;
 
+    .title1 {
+      font-size: 2rem;
+    }
     .header {
       width: 100%;
       min-width: 100%;
-      min-height: 55vh;
+      min-height: 40vh;
+    }
+
+    img {
+      transform: scale(0.75);
     }
 
     .content {
