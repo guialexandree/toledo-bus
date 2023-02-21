@@ -1,34 +1,25 @@
 @import "../../styles/colors.scss";
 
+body {
+  background-color: $white;
+}
+
+.textCenter {
+  text-align: center;
+}
+
 .signInWrap {
   @extend .flex-center;
 	min-height: 100vh;
   min-width: 100%;
-
-  .header {
-    @extend .flex-center;
-    background-color: $primary;
-    width: 600px;
-    max-width: 600px;
-    flex-direction: column;
-    height: 100vh;
-    min-width: 380px;
-    flex: 1;
-    padding: 1rem;
-
-    .iconWrap {
-      transform: scale(0.7) translateY(-50px);
-    }
-  }
+  background-color: $white;
 
   .content {
     @extend .flex-center;
-    background-color: $white;
     flex: 1;
     flex-direction: column;
     padding: 4rem;
     height: 100vh;
-    gap: 8px;
 
     .subtitle {
       color: $grey;
@@ -69,7 +60,7 @@
     .header {
       width: 100%;
       min-width: 100%;
-      min-height: 40vh;
+      min-height: 32vh;
     }
 
     img {

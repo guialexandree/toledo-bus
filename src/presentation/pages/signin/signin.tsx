@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
+import { useAnimationControls } from 'framer-motion'
 import { FacebookLogo, GoogleLogo, WindowsLogo } from 'phosphor-react'
 import { Authentication } from '@/domain/usecases'
-import { Button, Icon, IconName, Logo, currentAccountState } from '@/presentation/components'
-import { signInState } from './components'
+import { Animated, Button, Icon, IconName, Logo, currentAccountState } from '@/presentation/components'
 import { SignInLoading } from '@/presentation/pages/signin/components'
+import { Animations, signInState } from './components'
 import S from './signin-styles.scss'
 
 type SignInProps = {
@@ -20,6 +21,7 @@ const SignIn: React.FC<SignInProps> = ({
 }) => {
   const [state, setState] = useRecoilState(signInState)
   const [currentAccount, setCurrentAccount] = useRecoilState(currentAccountState)
+  const backgroundControl = useAnimationControls()
 
   const handleAuthentication = async (authentication: Authentication, provider: string): Promise<void> => {
     try {
@@ -39,37 +41,43 @@ const SignIn: React.FC<SignInProps> = ({
     }
   }
 
+  useEffect(() => {
+    backgroundControl.start('visible')
+  },[])
+
   return (
     <section className={S.signInWrap}>
-      <header className={S.header}>
-        <Logo />
-        <Icon className={S.iconWrap} iconName={IconName.busLogin} />
-      </header>
       <section className={S.content}>
         {state.isLoading
           ? <SignInLoading />
           : <>
-            <Icon iconName={IconName.busPeople} />
-            <h1 className={S.title1}>bora lá!</h1>
-            <p className={S.subtitle}>você está apenas um passo de chegar no seu destino</p>
-            <section className={S.authWrap}>
-              <h2 className={S.title1}>acessar sua conta</h2>
-              <Button
-                label='entrar com google'
-                icon={GoogleLogo}
-                onClick={async () => handleAuthentication(authenticationGoogle, 'google')}
-              />
-              <Button
-                label='entrar com microsoft'
-                icon={WindowsLogo}
-                onClick={async () => handleAuthentication(authenticationMicrosoft, 'microsoft')}
-              />
-              {false && <Button
-                label='entrar com facebook'
-                icon={FacebookLogo}
-                onClick={async () => handleAuthentication(authenticationFacebook, 'facebook')}
-              />}
-            </section>
+            <Animated variants={Animations.logoAnimations}>
+              <Icon iconName={IconName.busPeople} />
+            </Animated>
+            <Animated className={S.textCenter} variants={Animations.textAnimations}>
+              <h1 className={S.title1}>bora lá!</h1>
+              <p className={S.subtitle}>você está apenas um passo de chegar no seu destino</p>
+            </Animated>
+            <Animated variants={Animations.authAnimations}>
+              <section className={S.authWrap}>
+                <h2 className={S.title1}>acessar sua conta</h2>
+                <Button
+                  label='entrar com google'
+                  icon={GoogleLogo}
+                  onClick={async () => handleAuthentication(authenticationGoogle, 'google')}
+                />
+                <Button
+                  label='entrar com microsoft'
+                  icon={WindowsLogo}
+                  onClick={async () => handleAuthentication(authenticationMicrosoft, 'microsoft')}
+                />
+                {false && <Button
+                  label='entrar com facebook'
+                  icon={FacebookLogo}
+                  onClick={async () => handleAuthentication(authenticationFacebook, 'facebook')}
+                />}
+              </section>
+            </Animated>
           </>
         }
       </section>
