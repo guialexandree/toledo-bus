@@ -7,23 +7,26 @@
 Consulta dos itinerários e horários de ônibus de transporte público coletivo no município de Toledo/PR.<br>
 Atualmente a empresa responsável pelo transporte é a Sorriso de Toledo, dessa forma a base de dados do app será gerada de acordo com as informações disponibilizados para o público no site https://editor.mobilibus.com/web/bus2you/2i0xq
 
-## Requisitos MVP 
+## Requisitos V1 
 
 Código | Requisito | RN
 --- | --- | --- |
-RF01 | Deve ser possível realizar login através de um número de celular válido | RN01, RN02 |
-RF02 | Deve ser possível filtrar por uma linha de ônibus | RN03, RN04 |
-RF03 | Exibir detalhes da linha de ônibus selecionada | RN02 |
-RF04 | Exibir itinerário da linha de ônibus selecionada | RN02, RN03 |
-RF05 | Exibir rota da linha de ônibus no mapa |  |
-RF06 | Exibir linhas em transito |  |
+RF01 | Deve ser possível realizar login através da conta do Google | RN01 |
+RF02 | Deve ser possível realizar login através da conta do Microsoft | RN01 |
+RF03 | Após login os dados retornados devem ser usados para criar a conta do usuário | RN02 |
+RF04 | Deve ser possível filtrar por uma linha de ônibus e data | RN03, RN04 |
+RF05 | Deve exibir o mapa com o marcado no terminal e localização atual do usuário | RN02 |
+RF06 | Exibir itinerário da linha de ônibus selecionada | RN02, RN03 |
+RF07 | Exibir rota da linha de ônibus no mapa |  |
+RF08 | Exibir linhas em transito |  |
 
 Código | Regra de Negócio
 --- | --- |
-RN01 | Realizar validação via SMS |
-RN02 | Solicitar número apenas no primeiro login |
+RN01 | Login deve ficar válido por 30 dias |
+RN02 | Authenticação JWT gravar em localStorage |
 RN03 | Referênte ao dia da semana selecionado |
 RN04 | Armazear últimas buscas para cada usuário(localStorage) |
+
 
 ## Telas MVP: 
 
