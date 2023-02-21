@@ -1,4 +1,6 @@
 export * from './atoms/atoms'
+export * as Animations from './animated/animations'
+export { default as Animated } from './animated/animated'
 export { default as Button } from './button/button'
 export { default as Calendar } from './calendar/calendar'
 export { default as Error } from './error/error'
