@@ -6,18 +6,20 @@ export type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTM
   label: string
   icon?: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>>
   size?: number
+  className?: string
 }
 
 const Button: React.FC<ButtonProps> = ({
   label,
   size = 26,
   icon: Icon,
+  className,
   ...props
 }) => {
   return (
     <button
       type="button"
-      className={S.buttonWrap}
+      className={[S.buttonWrap, className].join(' ')}
       {...props}
     >
       {Icon && <Icon size={size} />}

@@ -5,15 +5,32 @@
 
   width: 100%;
   max-width: 600px;
-  border: 1px solid $greyDark;
-  color: $greyDark;
+  border-radius: 8px;
   font-weight: 600;
-  background-color: transparent;
+  background-color: $white;
+	font-size: 16px;
+  line-height: 50px;
+  outline: none;
+	padding: 0 16px;
+
+  button {
+    text-align: left;
+  }
+
+  svg {
+    margin-right: 1rem;
+  }
 
   &:hover {
     background-color: darken($white, 15%);
   }
-  svg {
-    margin-right: 1rem;
-  }
+
+  &:disabled {
+		background-color: var(--disabledBackground);
+		color: var(--disabledColor);
+
+    &:hover {
+      opacity: 1;
+    }
+	}
 }
