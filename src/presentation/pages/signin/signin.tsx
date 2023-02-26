@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
-import { useAnimationControls } from 'framer-motion'
-import { FacebookLogo, GoogleLogo, WindowsLogo } from 'phosphor-react'
+import { GoogleLogo, WindowsLogo } from 'phosphor-react'
 import { Authentication } from '@/domain/usecases'
-import { Animated, Button, Icon, IconName, Logo, currentAccountState } from '@/presentation/components'
-import { SignInLoading } from '@/presentation/pages/signin/components'
-import { Animations, signInState } from './components'
+import { Animations, signInState, FallbackAuthentication, ButtonAuth } from '@/presentation/pages/signin/components'
+import { Animated, Icon, IconName } from '@/presentation/components'
 import S from './signin-styles.scss'
 
 type SignInProps = {
@@ -16,40 +14,19 @@ type SignInProps = {
 
 const SignIn: React.FC<SignInProps> = ({
   authenticationGoogle,
-  authenticationMicrosoft,
-  authenticationFacebook
+  authenticationMicrosoft
 }) => {
-  const [state, setState] = useRecoilState(signInState)
-  const [currentAccount, setCurrentAccount] = useRecoilState(currentAccountState)
-  const backgroundControl = useAnimationControls()
-
-  const handleAuthentication = async (authentication: Authentication, provider: string): Promise<void> => {
-    try {
-      setState(oldState => ({ ...oldState, isLoading: true, provider }))
-      const user = await authentication.auth()
-      if (user) {
-        // busca usuario por email
-        // adiciona usuario caso não retorne na busca
-        // gravar usuario cadastrado/buscado no gerenciamento de estado
-        currentAccount.setCurrentAccount(user)
-      }
-      console.log(user)
-    } catch (error) {
-      setState(oldState => ({ ...oldState, mainError: error.message, provider: '' }))
-    } finally {
-      setState(oldState => ({ ...oldState, isLoading: false }))
-    }
-  }
+  const [state] = useRecoilState(signInState)
 
   useEffect(() => {
-    backgroundControl.start('visible')
+    document.body.style.backgroundColor = '#FFF'
   },[])
 
   return (
-    <section className={S.signInWrap}>
+    <Animated variants={Animations.backgroundAnimations} className={S.signInWrap}>
       <section className={S.content}>
         {state.isLoading
-          ? <SignInLoading />
+          ? <FallbackAuthentication />
           : <>
             <Animated variants={Animations.logoAnimations}>
               <Icon iconName={IconName.busPeople} />
@@ -61,27 +38,24 @@ const SignIn: React.FC<SignInProps> = ({
             <Animated variants={Animations.authAnimations}>
               <section className={S.authWrap}>
                 <h2 className={S.title1}>acessar sua conta</h2>
-                <Button
+                <ButtonAuth
                   label='entrar com google'
                   icon={GoogleLogo}
-                  onClick={async () => handleAuthentication(authenticationGoogle, 'google')}
+                  authentication={authenticationGoogle}
+                  provider='google'
                 />
-                <Button
+                <ButtonAuth
                   label='entrar com microsoft'
                   icon={WindowsLogo}
-                  onClick={async () => handleAuthentication(authenticationMicrosoft, 'microsoft')}
+                  authentication={authenticationMicrosoft}
+                  provider='microsoft'
                 />
-                {false && <Button
-                  label='entrar com facebook'
-                  icon={FacebookLogo}
-                  onClick={async () => handleAuthentication(authenticationFacebook, 'facebook')}
-                />}
               </section>
             </Animated>
           </>
         }
       </section>
-    </section>
+    </Animated>
   )
 }
 

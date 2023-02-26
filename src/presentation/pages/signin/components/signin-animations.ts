@@ -1,10 +1,22 @@
+export const backgroundAnimations = {
+  hidden: {
+    backgroundColor: '#FF6260'
+  },
+  visible: {
+    backgroundColor: '#FFF',
+    transition: {
+      duration: 1.3
+    }
+  }
+}
+
 export const logoAnimations: any = {
   hidden: { scale: 0, opacity: 0 },
   visible: {
     scale: 1,
     opacity: 1,
     transition: {
-      delay: 0.3,
+      delay: 0.6,
       duration: 0.5
     }
   }
@@ -31,8 +43,8 @@ export const authAnimations: any = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.2,
-      duration: 0.6
+      delay: 0.3,
+      duration: 0.8
     }
   }
 }

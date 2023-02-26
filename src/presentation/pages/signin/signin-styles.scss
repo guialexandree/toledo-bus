@@ -21,6 +21,10 @@ body {
     padding: 4rem;
     height: 100vh;
 
+    & > section + section {
+      margin-top: 12px;
+    }
+
     .subtitle {
       color: $grey;
       text-align: center;

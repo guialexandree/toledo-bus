@@ -1,10 +1,10 @@
 import React from 'react'
-import { Icon, IconName, Spinner } from '@/presentation/components'
-import S from '../signin-styles.scss'
 import { useRecoilValue } from 'recoil'
+import { Icon, IconName, Spinner } from '@/presentation/components'
 import { signInState } from './atoms'
+import S from '../signin-styles.scss'
 
-const SignInLoading: React.FC = () => {
+const FallbackAutentication: React.FC = () => {
   const { provider } = useRecoilValue(signInState)
 
   return (
@@ -17,4 +17,4 @@ const SignInLoading: React.FC = () => {
   )
 }
 
-export default SignInLoading
+export default FallbackAutentication
