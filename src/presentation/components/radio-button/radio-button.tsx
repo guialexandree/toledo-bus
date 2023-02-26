@@ -19,7 +19,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
 }) => {
   return (
     <section className={S.radioButtonWrap}>
-      <label htmlFor={id} className={checked && S.active}>
+      <label htmlFor={id} data-status={checked}>
         {icon}
         {label}
         <input

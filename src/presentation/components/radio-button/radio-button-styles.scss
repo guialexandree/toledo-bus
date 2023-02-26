@@ -1,19 +1,14 @@
 @import '../../styles/colors.scss';
 
 .radioButtonWrap {
-  input {
-    display: none;
-  }
+  input[type="radio"] { display: none; }
   border: none;
-  
-  img {
-    width: 16px;
-    margin-right: 0.2rem;
-  }
+  border-radius: 10px;
 
   label {
-    font-size: 12px;
+    font-size: 1rem;
     border: solid 1px $white;
+    outline: solid 1px transparent;
     color: $white;
     border-radius: 10px;
     padding: 4px 24px;
@@ -21,17 +16,25 @@
     display: flex;
     align-items: center;
 
-
-    &.active {
+    &[data-status="true"] {
       background: linear-gradient($white, $white) padding-box;
       border: solid 1px $primaryLight;
+      outline: solid 1px $primaryLight;
       color: $greyDark;
-      font-weight: 600;
+  
+      svg {
+        color: $black;
+      }
     }
 
     transition: all ease .3s;
     &:hover:not(.active) {
       border-color: $primaryLight;
+    }
+
+    svg {
+      color: $white;
+      margin-right: 8px;
     }
   }
 }

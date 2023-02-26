@@ -18,7 +18,7 @@ const Animated: React.FC<AnimatedProps> = ({
     <motion.section
       variants={variants}
       initial="hidden"
-      animate={control ?? 'visible'}
+      animate={control || 'visible'}
       {...{ className }}
     >
       {children}
