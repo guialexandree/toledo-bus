@@ -1,0 +1,24 @@
+@import '../../styles/colors.scss';
+
+.selectWrap {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .portalWrap {
+    &[data-status="true"] { display: flex; }
+    &[data-status="false"] { display: none; }
+  
+    position: absolute;
+    padding: 0;
+    top: 48px;
+    background-color: $white;
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    max-height: 60vh;
+    overflow-y: scroll;
+    flex-direction: column;
+  }
+}
