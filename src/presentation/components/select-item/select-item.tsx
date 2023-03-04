@@ -1,6 +1,6 @@
 import React from 'react'
-import S from './select-item-styles.scss'
 import { CheckCircle } from 'phosphor-react'
+import S from './select-item-styles.scss'
 
 type SelectItemProps = {
   id: number
