@@ -1,0 +1,25 @@
+@import '../../styles/colors.scss';
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 18px;
+
+  .iconWrap {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    
+    .icon {
+      position: absolute;
+      left: -32px;
+    }
+  }
+
+  .logoWrap {
+    @extend .flex-center;
+    flex: 1;
+  }
+}
