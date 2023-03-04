@@ -4,21 +4,23 @@ import Button from '../button/button'
 import S from './select-trigger-styles.scss'
 
 type SelectTriggerProps = {
+  name: string
   open: boolean
   setOpen: (isOpen: boolean) => void
-  setCurrent: (current: number) => void
-  current: number
   label: string
+  state: any
+  setState: any
 }
 
 export const SelectTrigger: React.FC<SelectTriggerProps> = ({
+  name,
   open,
   setOpen,
-  setCurrent,
-  current,
-  label
+  label,
+  state,
+  setState
 }) => {
-  const hasCurrent = current > -1
+  const hasCurrent = state.current > -1
 
   const handleToggleOpen = (event: React.MouseEvent<HTMLElement>): void => {
     event.preventDefault()
@@ -39,7 +41,7 @@ export const SelectTrigger: React.FC<SelectTriggerProps> = ({
           onClick={() => {
             open
               ? setOpen(false)
-              : setCurrent(-1)
+              : setState(old => ({ ...old, [name]: -1 }))
           }}
         />
         : <CaretDown />
