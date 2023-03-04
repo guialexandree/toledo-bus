@@ -14,7 +14,8 @@ $valid: #4CAF50;
 $invalid: #EF5350;
 $purple: #5D5FEF;
 
-$shadow: 0px 1px 3px -1px $black;
+$shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+$primaryGradient: linear-gradient(to left, $purple, $primary);
 
 .flex-center {
   display: flex;
