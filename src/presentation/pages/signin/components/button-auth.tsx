@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import { Authentication } from '@/domain/usecases'
-import { Button, ButtonProps, currentAccountState } from '@/presentation/components'
+import { ButtonBase, ButtonProps, currentAccountState } from '@/presentation/components'
 import { signInState } from './atoms'
 
 type ButtonAuthProps = ButtonProps & {
@@ -36,7 +36,7 @@ const ButtonAuth: React.FC<ButtonAuthProps> = ({
   }
 
   return (
-    <Button
+    <ButtonBase
       {...props}
       onClick={async () => handleAuthentication(authentication, provider)}
     />
