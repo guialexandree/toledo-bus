@@ -1,6 +1,25 @@
 @import "../../styles/colors.scss";
 
 .submit {
-	margin-top: 32px;
-	cursor: pointer;
+  @extend .flex-center;
+
+  color: $white;
+	background-image: $primaryGradient;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  font-weight: 600;
+	font-size: 16px;
+  line-height: 50px;
+  outline: none;
+	padding: 0 16px;
+
+  &:disabled {
+		background-color: var(--disabledBackground);
+		color: var(--disabledColor);
+
+    &:hover {
+      opacity: 1;
+    }
+	}
 }

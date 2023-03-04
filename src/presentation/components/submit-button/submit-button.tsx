@@ -11,7 +11,13 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
   state
 }) => {
   return (
-    <button data-testid="submit" disabled={state.isFormInvalid} className={S.submit} type="submit">{text}</button>
+    <button
+      disabled={state.isFormInvalid}
+      className={S.submit}
+      type="submit"
+    >
+      {text}
+    </button>
   )
 }
 
