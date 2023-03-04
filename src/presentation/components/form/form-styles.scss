@@ -1,8 +1,10 @@
 @import '../../styles/colors.scss';
 
+$cardPadding: 32px 24px;
+
 .formWrap {
   background-color: $white;
-  padding: 3rem 2rem;
+  padding: $cardPadding;
   border-radius: 16px;
   margin: 0 auto;
   box-shadow: $shadow;
