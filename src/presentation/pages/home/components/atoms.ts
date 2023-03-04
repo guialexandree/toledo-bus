@@ -28,6 +28,20 @@ const lines = [
   '291 - Europa Via Concórdia'
 ]
 
+const lastSearchs = [{
+  title: 'Colonia',
+  subtitle: 'sentido centro',
+  datetime: 'hoje'
+},{
+  title: 'Jardim Europa',
+  subtitle: 'sentido centro',
+  datetime: 'ontem'
+},{
+  title: 'São Francisco',
+  subtitle: 'sentido Parizotto',
+  datetime: '4 dias'
+}]
+
 export const homeState = atom({
   key: 'homeState',
   default: {
@@ -35,6 +49,7 @@ export const homeState = atom({
     isFormInvalid: false,
     mainError: '',
     lines,
+    lastSearchs,
     current: -1,
     dayFilter: 'today'
   }

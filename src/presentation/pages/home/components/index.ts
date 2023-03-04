@@ -1,6 +1,6 @@
 export * from './atoms'
 export { default as SubmitButton } from './submit-button'
 export { default as RadioButton } from './radio-button'
+export { default as List } from './list'
 export { default as FormStatus } from './form-status'
 export { default as FormSelect } from './form-select'
-export { default as FormLines } from './form'
