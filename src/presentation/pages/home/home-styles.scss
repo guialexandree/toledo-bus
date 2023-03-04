@@ -2,6 +2,7 @@
 
 body {
   background-color: $white!important;
+  padding-bottom: 4rem;
 }
 
 .homeWrap {
@@ -9,38 +10,18 @@ body {
   display: flex;
 
   .appBar {
+    display: flex;
+    flex-direction: column;
     background-color: $primary;
     width: 600px;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    header {
-      @extend .flex-center;
-      justify-content: space-between;
-
-      display: flex;
-      position: relative;
-
-      .iconWrap {
-        margin-left: -80px;
-      }
-
-      .userWrap {
-        border-radius: 50%;
-        background-color: $white;
-        width: 60px;
-        height: 60px;
-        margin-right: 24px;
-      }
-    }
 
     .filtersWrap {
-      width: 70%;
       background-color: $secondary;
-      padding: 30px 20px;
+      padding: 3rem 2rem;
       border-radius: 15px;
       margin: 0 auto;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
       z-index: 1;
       
       .filterTrigger {
@@ -160,7 +141,8 @@ body {
       .filtersWrap { 
         width: auto;
         max-height: 36vh;
-        margin-top: 0;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
       }
     }
   }

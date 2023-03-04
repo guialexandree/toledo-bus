@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Avatar, Button, Icon, IconName, Logo, RadioButton, Select, currentAccountState } from '@/presentation/components'
+import { Button, Header, RadioButton, Select, currentAccountState } from '@/presentation/components'
 import { Calendar } from 'phosphor-react'
 import S from './home-styles.scss'
 import { useRecoilState } from 'recoil'
@@ -55,14 +55,7 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <section className={S.homeWrap}>
       <section className={S.appBar}>
-        <header>
-          <Icon className={S.iconWrap} iconName={IconName.busLogin} />
-          <Logo />
-          <Avatar
-            image={currentAccount.getCurrentAccount().image}
-            className={S.userWrap}
-          />
-        </header>
+        <Header />
         <form className={S.filtersWrap} >
           <fieldset>
             <Select.Select
