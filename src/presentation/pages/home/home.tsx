@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Header, RadioButton, Select, currentAccountState } from '@/presentation/components'
+import { ButtonBase, FormBase, Header, RadioButton, Select, SubmitButtonBase, currentAccountState } from '@/presentation/components'
 import { Calendar } from 'phosphor-react'
 import S from './home-styles.scss'
 import { useRecoilState } from 'recoil'
@@ -56,15 +56,14 @@ const Home: React.FC<HomeProps> = () => {
     <section className={S.homeWrap}>
       <section className={S.appBar}>
         <Header />
-        <form className={S.filtersWrap} >
+        <FormBase className={S.filtersSearch} >
           <fieldset>
             <Select.Select
               items={lines}
               label='escolha a linha de ônibus'
             />
           </fieldset>
-
-          <fieldset className={S.dayFilters}>
+          <fieldset data-list>
             <RadioButton
               id='today'
               label='hoje'
@@ -88,13 +87,13 @@ const Home: React.FC<HomeProps> = () => {
               onChange={handleDayFilter}
             />
           </fieldset>
-          {/* <DataPicker /> */}
-          <Button
-            type="submit"
-            className={S.submit}
-            label="visualizar horários"
-          />
-        </form>
+          <fieldset>
+            <SubmitButtonBase
+              text="visualizar horários"
+              state={{}}
+            />
+          </fieldset>
+        </FormBase>
         <section className={S.lastSearchsWrap}>
           <h2>últimas buscas</h2>
           <ul className={S.listSearchs}>

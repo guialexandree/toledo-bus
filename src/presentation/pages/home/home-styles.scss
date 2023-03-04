@@ -16,55 +16,10 @@ body {
     width: 600px;
     height: 100vh;
 
-    .filtersWrap {
+    .filtersSearch {
       background-color: $secondary;
-      padding: 3rem 2rem;
-      border-radius: 15px;
-      margin: 0 auto;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
-      z-index: 1;
-      
-      .filterTrigger {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 8px;
-        background-color: $white;
-      }
-
-      .trigger {
-        background-color: transparent;
-        color: $primaryLight;
-        width: 100%;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      
-      fieldset {
-        & + fieldset {
-          margin-top: 1rem;
-        }
-        border: none;
-      }
-
-      .dayFilters {
-        display: flex;
-        gap: 8px;
-      }
-
-      .submit {
-        background-image: linear-gradient(to left, $purple, $primary);
-        color: $white;
-        margin-top: 1rem;
-        width: 100%;
-        font-size: 20px;
-        transition: all ease .3s;
-
-        &:hover {
-          background-color: darken($primary, 2%);
-        }
-      }
     }
+    
     .lastSearchsWrap {
       flex: 1;
       flex-direction: column;
@@ -88,7 +43,7 @@ body {
           position: absolute;
           bottom: -1rem;
           left: 0;
-          background-image: linear-gradient(to left, $purple, $primary);
+          background-image: $primaryGradient;
           width: 60%;
           height: 4px;
         }
@@ -107,7 +62,7 @@ body {
           cursor: pointer;
           
           &:hover {
-            border: solid 1px $primary;
+            border: solid 1px $purple;
             transform: translateX(6px);
             transition: all ease .4s;
           }
