@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
-import { Header, currentAccountState } from '@/presentation/components'
-import { FormLines } from './components'
+import { FormBase, Header, ListBase, currentAccountState } from '@/presentation/components'
+import { FormSelect, FormStatus, List, RadioButton, SubmitButton } from './components'
+import { Calendar } from 'phosphor-react'
 import S from './home-styles.scss'
 
 type HomeProps = { }
@@ -17,35 +18,19 @@ const Home: React.FC<HomeProps> = () => {
     <section className={S.homeWrap}>
       <section className={S.appBar}>
         <Header />
-        <FormLines className={S.filtersSearch} />
+        <FormBase className={S.filtersSearch} >
+          <FormSelect label='escolha a linha do ônibus' />
+          <fieldset data-list>
+            <RadioButton name='today' label='hoje' />
+            <RadioButton name='tomorrow' label='amanhã' />
+            <RadioButton name='period' label='data' icon={<Calendar size={16} />} />
+          </fieldset>
+          <SubmitButton text='visualizar horários' />
+          <FormStatus />
+        </FormBase>
         <section className={S.lastSearchsWrap}>
-          <h2>últimas buscas</h2>
-          <ul className={S.listSearchs}>
-            <li>
-              <article className={S.search}>
-                <p>Colonia</p>
-                <span>sentido centro</span>
-              </article>
-              <span className={S.datetime}>hoje</span>
-            </li>
-            <li>
-              <article className={S.search}>
-                <p>Jardim Europa</p>
-                <span>sentido centro</span>
-              </article>
-              <span className={S.datetime}>ontem</span>
-            </li>
-            <li>
-              <article className={S.search}>
-                <p>São Francisco via Parizotto</p>
-                <span>sentido bairro</span>
-              </article>
-              <span className={S.datetime}>4 dias</span>
-            </li>
-          </ul>
+          <List />
         </section>
-      </section>
-      <section className={S.mapWrap}>
       </section>
     </section>
   )

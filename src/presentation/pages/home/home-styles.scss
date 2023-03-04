@@ -22,83 +22,8 @@ body {
     
     .lastSearchsWrap {
       flex: 1;
-      flex-direction: column;
-      padding: 30px 20px;
-
-      margin-top: -4rem;
-      padding-top: 6rem;
-
+      display: flex;
       background-color: $white;
-
-      h2 {
-        position: relative;
-        flex: 1;
-        font-size: 18px;
-        font-weight: 500;
-        color: $greyDark;
-        margin-bottom: 2rem;
-
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: -1rem;
-          left: 0;
-          background-image: $primaryGradient;
-          width: 60%;
-          height: 4px;
-        }
-      }
-
-      ul {
-        color: $greyDark;
-        li {
-          & + li {
-            margin-top: 1rem;
-          }
-          display: flex;
-          padding: 0.8rem;
-          border: solid 1px rgba(0,0,0, .15);
-          border-radius: 4px;
-          cursor: pointer;
-          
-          &:hover {
-            border: solid 1px $purple;
-            transform: translateX(6px);
-            transition: all ease .4s;
-          }
-
-          .search {
-            flex: 1;
-            p {
-              font-size: 18px;
-              font-weight: 500;
-              margin-bottom: 0.5rem;
-            }
-
-            span {
-              color: $grey;
-            }
-          }
-          .datetime {
-            color: $grey;
-            font-weight: bold;
-          }
-
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .homeWrap {
-    .appBar {
-      .filtersWrap { 
-        width: auto;
-        max-height: 36vh;
-        margin: 0 auto;
-        padding: 2rem 1.5rem;
-      }
     }
   }
 }
