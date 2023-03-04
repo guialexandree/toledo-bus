@@ -1,0 +1,33 @@
+@import '../../styles/colors.scss';
+
+.formWrap {
+  background-color: $white;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  margin: 0 auto;
+  box-shadow: $shadow;
+  z-index: 1;
+
+  fieldset {
+    & + fieldset {
+      margin-top: 1rem;
+    }
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    button {
+      width: 100%;
+      font-size: 20px;
+    }
+
+    &[data-list] {
+      display: flex;
+      flex-wrap: wrap;
+
+      & > *:not(:first-child){
+        margin-left: 6px;
+      }
+    }
+  }
+}
