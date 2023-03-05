@@ -10,7 +10,7 @@ const FallbackAutentication: React.FC = () => {
   return (
     <>
       <Icon iconName={IconName.busLoginWith} />
-      <h1 className={S.title1}>aguardando login</h1>
+      <h1 className={S.title}>aguardando login</h1>
       <p className={S.subtitle}>uma nova aba foi aberta para efetuar o login com {provider}</p>
       <Spinner />
     </>
