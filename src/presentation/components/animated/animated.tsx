@@ -3,8 +3,8 @@ import { AnimationControls, motion, Variants } from 'framer-motion'
 
 type AnimatedProps = {
   variants: any
-  className?: string
   children: React.ReactNode
+  className?: string
   control?: AnimationControls
 }
 
@@ -19,7 +19,7 @@ const Animated: React.FC<AnimatedProps> = ({
       variants={variants}
       initial="hidden"
       animate={control || 'visible'}
-      {...{ className }}
+      className={className}
     >
       {children}
     </motion.section>
