@@ -34,7 +34,8 @@ Código | Requisito | RN
 RF01 | Deve ser possível realizar login através da conta do Google | RN01 |
 RF02 | Deve ser possível realizar login através da conta do Microsoft | RN01 |
 RF03 | Deve ser possível filtrar por uma linha de ônibus e período | RN03, RN04 |
-RF04 | Exibir detalhes e itinerário da linha de ônibus selecionada | RN02, RN03 |
+RF04 | Exibir horários da linha de ônibus selecionada |  |
+RF06 | Exibir itinerário da linha de ônibus |  |
 RF05 | Exibir últimas buscas do usuário | RN05 |
 
 Código | Regra de Negócio
