@@ -20,16 +20,14 @@ const Select: React.FC<SelectProps> = ({
 }) => {
   const wrapRef = useRef(null)
   const [open, setOpen] = useState(false)
-  const [current, setCurrent] = useState<number>(-1)
 
   const getLabel = (): string => {
-    return current > -1
-      ? items[current]
+    return state.current > -1
+      ? items[state.current]
       : (label || 'selecione uma opção')
   }
 
   const handleSelect = (id: number): void => {
-    setCurrent(id)
     setState(old => ({ ...old, [name]: id }))
     setOpen(false)
   }
@@ -50,7 +48,7 @@ const Select: React.FC<SelectProps> = ({
             id={index}
             key={item}
             label={item}
-            checked={index === current}
+            checked={index === state.current}
             onSelect={handleSelect}
           />
         )}
