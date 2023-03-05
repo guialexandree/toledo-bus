@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnimationControls, motion, Variants } from 'framer-motion'
+import { AnimationControls, motion } from 'framer-motion'
 
 type AnimatedProps = {
   variants: any

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
-import { FormBase, Header, ListBase, currentAccountState } from '@/presentation/components'
+import { FormBase, Header, currentAccountState } from '@/presentation/components'
 import { FormSelect, FormStatus, List, RadioButton, SubmitButton } from './components'
 import { Calendar } from 'phosphor-react'
 import S from './home-styles.scss'
@@ -28,9 +28,9 @@ const Home: React.FC<HomeProps> = () => {
           <SubmitButton text='visualizar horários' />
           <FormStatus />
         </FormBase>
-        <section className={S.lastSearchsWrap}>
-          <List />
-        </section>
+      </section>
+      <section className={S.lastSearchsWrap}>
+        <List />
       </section>
     </section>
   )
