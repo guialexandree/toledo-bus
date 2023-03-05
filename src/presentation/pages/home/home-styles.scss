@@ -8,22 +8,26 @@ body {
 .homeWrap {
   flex: 1;
   display: flex;
-
+  flex-direction: column;
+  background-color: $primary;
+  
   .appBar {
     display: flex;
     flex-direction: column;
-    background-color: $primary;
-    width: 600px;
-    height: 100vh;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
 
     .filtersSearch {
+      margin-bottom: -80px;
       background-color: $secondary;
     }
-    
-    .lastSearchsWrap {
-      flex: 1;
-      display: flex;
-      background-color: $white;
-    }
+  }
+  
+  .lastSearchsWrap {
+    flex: 1;
+    display: flex;
+    background-color: $white;
+    padding-top: 80px;
   }
 }
