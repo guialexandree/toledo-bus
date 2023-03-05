@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/30730216/218342597-d60344d7-395a-47e1-b6bf-727205346257.png)
 
-# Descrição MVP
+# Descrição
 
 Consulta dos itinerários e horários de ônibus de transporte público coletivo no município de Toledo/PR.<br>
 Atualmente a empresa responsável pelo transporte é a Sorriso de Toledo, dessa forma a base de dados do app será gerada de acordo com as informações disponibilizados para o público no site https://editor.mobilibus.com/web/bus2you/2i0xq
@@ -27,7 +27,7 @@ Atualmente a empresa responsável pelo transporte é a Sorriso de Toledo, dessa 
 
 ![image](https://user-images.githubusercontent.com/30730216/222873761-f07c224f-1464-4b5a-8053-b90472e51ff0.png)
 
-# Requisitos V1 
+# Requisitos 
 
 Código | Requisito | RN
 --- | --- | --- |
