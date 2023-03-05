@@ -4,6 +4,7 @@ import { GoogleLogo, WindowsLogo } from 'phosphor-react'
 import { Authentication } from '@/domain/usecases'
 import { Animations, signInState, FallbackAuthentication, ButtonAuth } from '@/presentation/pages/signin/components'
 import { Animated, Icon, IconName } from '@/presentation/components'
+import { useMediaQuery } from '@/presentation/hooks'
 import S from './signin-styles.scss'
 
 type SignInProps = {
@@ -17,6 +18,7 @@ const SignIn: React.FC<SignInProps> = ({
   authenticationMicrosoft
 }) => {
   const [state] = useRecoilState(signInState)
+  const { isMobile } = useMediaQuery()
 
   useEffect(() => {
     document.body.style.backgroundColor = '#FFF'
@@ -29,28 +31,26 @@ const SignIn: React.FC<SignInProps> = ({
           ? <FallbackAuthentication />
           : <>
             <Animated variants={Animations.logoAnimations}>
-              <Icon iconName={IconName.busPeople} />
+              <Icon height={isMobile() ? 180 : 220} iconName={IconName.busPeople} />
             </Animated>
             <Animated className={S.textCenter} variants={Animations.textAnimations}>
-              <h1 className={S.title1}>bora lá!</h1>
+              <h1 className={S.title}>bora lá!</h1>
               <p className={S.subtitle}>você está apenas um passo de chegar no seu destino</p>
             </Animated>
-            <Animated variants={Animations.authAnimations}>
-              <section className={S.authWrap}>
-                <h2 className={S.title1}>acessar sua conta</h2>
-                <ButtonAuth
-                  label='entrar com google'
-                  icon={GoogleLogo}
-                  authentication={authenticationGoogle}
-                  provider='google'
-                />
-                <ButtonAuth
-                  label='entrar com microsoft'
-                  icon={WindowsLogo}
-                  authentication={authenticationMicrosoft}
-                  provider='microsoft'
-                />
-              </section>
+            <Animated className={S.authWrap} variants={Animations.authAnimations}>
+              <h2 className={S.title}>acessar sua conta</h2>
+              <ButtonAuth
+                label='entrar com google'
+                icon={GoogleLogo}
+                authentication={authenticationGoogle}
+                provider='google'
+              />
+              <ButtonAuth
+                label='entrar com microsoft'
+                icon={WindowsLogo}
+                authentication={authenticationMicrosoft}
+                provider='microsoft'
+              />
             </Animated>
           </>
         }

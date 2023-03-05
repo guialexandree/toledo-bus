@@ -1,28 +1,42 @@
 @import "../../styles/colors.scss";
 
 body {
-  background-color: $white;
-}
-
-.textCenter {
-  text-align: center;
+  background-color: $white!important;
+  padding-bottom: 4rem;
 }
 
 .signInWrap {
-  @extend .flex-center;
-	min-height: 100vh;
-  min-width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	height: 100vh;
+	max-height: 100vh;
+  overflow: hidden;
   background-color: $white;
 
   .content {
-    @extend .flex-center;
     flex: 1;
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    padding: 4rem;
-    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
 
     & > section + section {
-      margin-top: 12px;
+      margin-top: 24px;
+    }
+
+    .icon {
+      max-width: 240px;
+    }
+
+    .title {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
 
     .subtitle {
@@ -38,11 +52,6 @@ body {
       flex-direction: column;
       width: 100%;
     
-      .title1 {
-        margin-top: 2rem;
-        font-size: 1.8rem;
-      }
-    
       button {
         margin-top: 1rem;
         border: 3px solid transparent;
@@ -52,28 +61,17 @@ body {
       }
     }
   }
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .signInWrap {
     flex-direction: column;
 
-    .title1 {
-      font-size: 2rem;
-    }
-    .header {
-      width: 100%;
-      min-width: 100%;
-      min-height: 32vh;
-    }
-
-    img {
-      transform: scale(0.75);
-    }
-
     .content {
-      flex: 1;
-      width: 100%;
+      .title {
+        font-size: 2rem;
+      }
     }
   }
 }
