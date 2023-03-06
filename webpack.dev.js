@@ -2,6 +2,8 @@ const { DefinePlugin } = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const common = require('./webpack.common')
 const { merge } = require('webpack-merge')
+const dotenv = require('dotenv')
+dotenv.config()
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -40,7 +42,7 @@ module.exports = merge(common, {
 	},
 	plugins: [
 		new DefinePlugin({
-			'process.env.API_URL': JSON.stringify('http://localhost:5050/api')
+      'process.env': JSON.stringify(process.env)
 		}),
 		new HtmlWebPackPlugin({
 			template: './template.dev.html'

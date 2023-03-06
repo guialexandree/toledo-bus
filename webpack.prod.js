@@ -39,7 +39,7 @@ module.exports = merge(common, {
 	},
 	plugins: [
 		new DefinePlugin({
-			'process.env.API_URL': JSON.stringify('https://localhost:5050/api')
+			'process.env': JSON.stringify(process.env)
 		}),
 		new HtmlWebPackPlugin({
 			template: './template.prod.html'
