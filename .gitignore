@@ -4,3 +4,4 @@ dist
 ./cypress
 
 .env
+package-lock.json
