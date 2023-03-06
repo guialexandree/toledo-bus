@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+
+.appBarWrap {
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+
+  .appBarContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+}
