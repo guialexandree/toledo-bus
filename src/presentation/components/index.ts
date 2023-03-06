@@ -1,5 +1,6 @@
 export * from './atoms/atoms'
 export * as Animations from './animated/animations'
+export { default as AppBar } from './app-bar/app-bar'
 export { default as Avatar } from './avatar/avatar'
 export { default as Animated } from './animated/animated'
 export { default as ButtonBase, ButtonProps } from './button/button'
