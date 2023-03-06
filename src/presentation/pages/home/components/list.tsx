@@ -3,11 +3,15 @@ import { useRecoilValue } from 'recoil'
 import { homeState } from './atoms'
 import { ListBase, ListItemBase } from '@/presentation/components'
 
-const List: React.FC = () => {
+type ListProps = {
+  className?: string
+}
+
+const List: React.FC<ListProps> = ({ className }) => {
   const state = useRecoilValue(homeState)
 
   return (
-    <ListBase title='últimas buscas'>
+    <ListBase className={className} title='últimas buscas'>
       {state.lastSearchs?.map((search, index) => (
         <ListItemBase
           key={`search-${index}`}
