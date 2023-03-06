@@ -1,4 +1,5 @@
 import React from 'react'
+import { Subtitle } from '@/presentation/components'
 import S from './list-styles.scss'
 
 type ListProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
@@ -13,7 +14,7 @@ const List: React.FC<ListProps> = ({
 }) => {
   return (
     <section className={[S.listWrap, className].join(' ')}>
-      <h2>{title}</h2>
+      <Subtitle text={title} />
       <ul>
         {children}
       </ul>

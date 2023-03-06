@@ -6,22 +6,4 @@
   flex-direction: column;
   padding: 30px 20px;
   color: $greyDark;
-
-  h2 {
-    position: relative;
-    font-size: 18px;
-    font-weight: 500;
-    color: $greyDark;
-    margin-bottom: 2rem;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -1rem;
-      left: 0;
-      background-image: $primaryGradient;
-      width: 60%;
-      height: 4px;
-    }
-  }
 }
