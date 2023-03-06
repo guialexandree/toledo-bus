@@ -1,6 +1,6 @@
-import { AuthProvider } from '@/data/protocols'
 import { Authentication } from '@/domain/usecases'
-import { Auth, signInWithPopup } from 'firebase/auth'
+import { AuthProvider } from '@/data/protocols'
+import { Auth, signInWithPopup } from '@/infra/services'
 
 export class RemoteAuthentication implements Authentication {
   constructor (
