@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import {
+  Auth,
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
@@ -8,18 +9,19 @@ import {
 } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDLa71VEW6QRfl4QX38f9zhw9fmw-E4G9E',
-  authDomain: 'toledo-bus.firebaseapp.com',
-  projectId: 'toledo-bus',
-  storageBucket: 'toledo-bus.appspot.com',
-  messagingSenderId: '676679266800',
-  appId: '1:676679266800:web:331d54f24458d8a69a2d35'
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID
 }
 
 const app = initializeApp(firebaseConfig)
 const firebaseAuthConfig = getAuth(app)
 
 export {
+  Auth,
   firebaseAuthConfig,
   GoogleAuthProvider,
   FacebookAuthProvider,
