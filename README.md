@@ -13,19 +13,24 @@ Atualmente a empresa responsável pelo transporte é a Sorriso de Toledo, dessa 
 
 > Splash
 
-![image](https://user-images.githubusercontent.com/30730216/222873203-f302cb96-24b0-4568-a364-6342d4272bf7.png)
+![image](https://user-images.githubusercontent.com/30730216/227804574-66a397f8-9c2f-4001-ae32-b3cd9d989b14.png)
 
 > Login
 
-![image](https://user-images.githubusercontent.com/30730216/222873337-177b20e4-903e-4c59-811a-f34f2fde4a48.png)
+![image](https://user-images.githubusercontent.com/30730216/227804606-1e342cb9-bc61-4cce-86ff-3e5b4b58ed22.png)
 
 > Login PopUp
 
-![image](https://user-images.githubusercontent.com/30730216/222873440-59e38617-422e-42f6-8e49-aff83af1512c.png)
+![image](https://user-images.githubusercontent.com/30730216/227804620-38e4438a-db19-4acc-9185-660658b5843a.png)
 
 > Home
 
-![image](https://user-images.githubusercontent.com/30730216/222873761-f07c224f-1464-4b5a-8053-b90472e51ff0.png)
+![image](https://user-images.githubusercontent.com/30730216/227804634-488d75cd-69a0-498c-9256-bb3832d29160.png)
+
+> Line View
+
+![image](https://user-images.githubusercontent.com/30730216/227804664-992925cd-46c7-44a0-b411-ba94d6ea47bb.png)
+
 
 # Requisitos 
 
