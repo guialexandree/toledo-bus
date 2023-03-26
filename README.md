@@ -34,14 +34,14 @@ Código | Requisito | RN
 RF01 | Deve ser possível realizar login através da conta do Google | RN01 |
 RF02 | Deve ser possível realizar login através da conta do Microsoft | RN01 |
 RF03 | Deve ser possível filtrar por uma linha de ônibus e período | RN03, RN04 |
-RF04 | Exibir horários da linha de ônibus selecionada |  |
-RF06 | Exibir itinerário da linha de ônibus |  |
-RF05 | Exibir últimas buscas do usuário | RN05 |
+RF04 | Exibir últimas buscas do usuário | RN05 |
+RF05 | Exibir horários da linha de ônibus selecionada | RN06 |
 
 Código | Regra de Negócio
 --- | --- |
-RN01 | Login deve ficar válido por 60 dias |
+RN01 | Login deve ficar válido por 60 dias, após vencimento o login deve ser solicitado |
 RN02 | Authenticação JWT gravar em localStorage |
-RN03 | Pode ser filtrado por hoje, amanhã ou data fixa |
+RN03 | Pode ser filtrado por hoje, amanhã ou data informada pelo usuáio |
 RN04 | Armazenar últimas buscas do usuário(localStorage) |
 RN05 | Deve exibir apenas as quatro últimas buscas |
+RN06 | Deve ser exibido em destaque o proximo horário a sair na linha selecionada |
