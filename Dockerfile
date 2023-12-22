@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql:8-oraclelinux8
 
 RUN chown -R mysql:root /var/lib/mysql/
 
