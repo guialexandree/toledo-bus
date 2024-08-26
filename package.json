@@ -91,6 +91,6 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": "16.19.0"
+    "node": "20.17.0"
   }
 }
