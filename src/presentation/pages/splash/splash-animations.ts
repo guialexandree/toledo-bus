@@ -1,0 +1,93 @@
+const isMobile = window.innerWidth < 600
+
+export const logoAnimations = {
+  hidden: { y: -80, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      delay: 0.4,
+      type: 'spring',
+      damping: 6
+    }
+  },
+  exit: {
+    y: 0,
+    opacity: 1,
+    scale: 0,
+    transition: {
+      duration: 0.3
+    }
+  }
+}
+
+export const busRouteAnimations: any = {
+  hidden: { x: isMobile ? -600 : -1080, opacity: 0 },
+  route: {
+    x: 1,
+    opacity: 1,
+    transition: {
+      delay: 1,
+      type: 'spring',
+      damping: 14,
+      mass: 1,
+      stiffness: 140
+    }
+  },
+  exit: {
+    x: isMobile ? 600 : 2000,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 2
+    }
+  }
+}
+
+export const busRouteSecondAnimations: any = {
+  hidden: {
+    position: 'fixed',
+    bottom: -4,
+    left: 0,
+    x: isMobile ? 600 : 2000,
+    opacity: 0
+  },
+  route: {
+    x: 24,
+    opacity: 1,
+    scaleX: -1,
+    transition: {
+      delay: 0,
+      type: 'spring',
+      damping: 15,
+      mass: 0.55,
+      stiffness: 150
+    }
+  },
+  exit: {
+    x: -400,
+    opacity: 1,
+    transition: {
+      duration: 2
+    }
+  }
+}
+
+export const peopleAnimations = {
+  hidden: {
+    y: 100,
+    opacity: 0,
+    position: 'fixed',
+    left: 48,
+    bottom: 0
+  },
+  visible: {
+    y: 0,
+    opacity: 1
+  },
+  exit: {
+    scale: 0,
+    opacity: 0
+  }
+}

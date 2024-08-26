@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useAnimationControls } from 'framer-motion'
 import { Animated, Icon, IconName, Logo } from '@/presentation/components'
-import { Animations } from './components'
+import * as Animations from './splash-animations'
 import S from './splash-styles.scss'
 
 const Splash: React.FC = () => {
@@ -13,9 +13,11 @@ const Splash: React.FC = () => {
   const busControlSecond = useAnimationControls()
 
   const sequence = async (): Promise<void> => {
-    await peopleContol.start('visible')
-    await logoControl.start('visible')
-    await busControl.start('route')
+    await Promise.all([
+      peopleContol.start('visible'),
+      logoControl.start('visible'),
+      busControl.start('route')
+    ])
     await busControl.start('exit')
     await busControlSecond.start('route')
     await peopleContol.start('exit')
@@ -26,7 +28,9 @@ const Splash: React.FC = () => {
 
   useEffect(() => {
     sequence()
-      .then(() => { history.replace('/signin') })
+      .then(() => {
+        history.replace('/signin')
+      })
   },[])
 
   return (

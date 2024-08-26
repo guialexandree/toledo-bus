@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import { GoogleLogo, WindowsLogo } from 'phosphor-react'
 import { Authentication } from '@/domain/usecases'
@@ -20,7 +20,7 @@ const SignIn: React.FC<SignInProps> = ({
   const [state] = useRecoilState(signInState)
   const { isMobile } = useMediaQuery()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.body.style.backgroundColor = '#FFF'
   },[])
 
