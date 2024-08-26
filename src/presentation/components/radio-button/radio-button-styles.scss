@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 
 .radioButtonWrap {
+  border-radius: 10px;
   input[type="radio"] { display: none; }
   border: none;
   border-radius: 10px;

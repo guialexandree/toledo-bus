@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import S from './radio-button-styles.scss'
 
 type RadioButtonProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {
@@ -7,7 +7,7 @@ type RadioButtonProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLIn
   checked: boolean
   group: string
   icon?: React.ReactNode
-  setState: any
+  onClick: () => void
 }
 
 const RadioButton: React.FC<RadioButtonProps> = ({
@@ -16,12 +16,12 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   checked = false,
   group,
   icon,
-  setState,
+  onClick,
   ...props
 }) => {
   const handleChecked = (event: React.MouseEvent<HTMLInputElement>): void => {
     event.preventDefault()
-    setState(old => ({ ...old, [group]: name }))
+    onClick()
   }
 
   return (
@@ -40,4 +40,4 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   )
 }
 
-export default RadioButton
+export default memo(RadioButton)

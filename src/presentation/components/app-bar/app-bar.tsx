@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import S from './app-bar-styles.scss'
 
 export type AppBarProps = {
@@ -16,4 +16,4 @@ const AppBar: React.FC<AppBarProps> = ({ children, className }) => {
   )
 }
 
-export default AppBar
+export default memo(AppBar)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Logo, Icon, IconName, Avatar } from '@/presentation/components'
 import S from './header-styles.scss'
 
@@ -25,4 +25,4 @@ const Header: React.FC<HeaderProps> = ({ urlImage = mockImagemAvatar, ...props }
   )
 }
 
-export default Header
+export default memo(Header)

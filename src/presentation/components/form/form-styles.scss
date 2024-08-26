@@ -1,10 +1,8 @@
 @import '../../styles/colors.scss';
 
-$cardPadding: 32px 24px;
-
 .formWrap {
   background-color: $white;
-  padding: $cardPadding;
+  padding: 24px 24px;
   border-radius: 16px;
   margin: 0 auto;
   box-shadow: $shadow;
@@ -26,6 +24,7 @@ $cardPadding: 32px 24px;
     &[data-list] {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 0.5rem;
 
       & > *:not(:first-child){
         margin-left: 6px;

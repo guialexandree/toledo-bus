@@ -3,20 +3,12 @@ import S from './submit-button-styles.scss'
 
 type SubmitButtonProps = {
   text: string
-  state: any
 }
 
-const SubmitButton: React.FC<SubmitButtonProps> = ({
-  text,
-  state
-}) => {
+const SubmitButton: React.FC<SubmitButtonProps> = (props) => {
   return (
-    <button
-      disabled={state.isFormInvalid}
-      className={S.submit}
-      type="submit"
-    >
-      {text}
+    <button className={S.submit} type="submit">
+      {props.text}
     </button>
   )
 }
