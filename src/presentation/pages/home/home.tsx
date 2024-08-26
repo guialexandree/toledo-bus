@@ -1,37 +1,57 @@
 import React, { useEffect } from 'react'
-import { useRecoilState } from 'recoil'
-import { AppBar, FormBase, Header, currentAccountState } from '@/presentation/components'
-import { FormSelect, FormStatus, List, RadioButton, SubmitButton } from './components'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import { GetLines, GetLinesSearched } from '@/domain/usecases'
+import { AppBar, FormBase, Header, SubmitButtonBase } from '@/presentation/components'
+import { LineBusSelector, LastLineBusSearchs, isLoadingGetLinesState, isLoadingGetLinesSearchsState, linesBusState, linesBusSearchsState, DayFilterLineBus } from '@/presentation/pages/home/components'
 import { Calendar } from 'phosphor-react'
 import S from './home-styles.scss'
 
-type HomeProps = { }
+type HomeProps = {
+  getLines: GetLines
+  getLinesSearched: GetLinesSearched
+}
 
-const Home: React.FC<HomeProps> = () => {
-  const [currentAccount, setCurrentAccount] = useRecoilState(currentAccountState)
+const Home: React.FC<HomeProps> = ({ getLines, getLinesSearched }) => {
+  const setLines = useSetRecoilState(linesBusState)
+  const setLinesBusSearchs = useSetRecoilState(linesBusSearchsState)
+  const setLoadingGetLines = useSetRecoilState(isLoadingGetLinesState)
+  const [isLoadingGetLinesSearchs, setLoadingGetLinesSearchs] = useRecoilState(isLoadingGetLinesSearchsState)
 
   useEffect(() => {
-    const account = currentAccount.getCurrentAccount()
-  })
+    Promise.all([
+      getLines
+        .getAll()
+        .then(setLines)
+        .catch(console.error)
+        .finally(() => { setLoadingGetLines(false) }),
+      getLinesSearched
+        .getLatest()
+        .then(setLinesBusSearchs)
+        .catch(console.error)
+        .finally(() => { setLoadingGetLinesSearchs(false) })
+    ])
+  }, [])
 
   return (
     <section className={S.homeWrap}>
       <AppBar className={S.appBarWrap}>
         <Header />
         <FormBase className={S.filtersSearch} >
-          <FormSelect label='escolha a linha do ônibus' />
+          <LineBusSelector />
+
           <fieldset data-list>
-            <RadioButton name='today' label='hoje' />
-            <RadioButton name='tomorrow' label='amanhã' />
-            <RadioButton name='period' label='data' icon={<Calendar size={16} />} />
+            <DayFilterLineBus name='today' label='hoje' />
+            <DayFilterLineBus name='tomorrow' label='amanhã' />
+            <DayFilterLineBus name='period' label='data' icon={<Calendar size={16} />} />
           </fieldset>
-          <SubmitButton text='visualizar horários' />
-          <FormStatus />
+
+          <fieldset>
+            <SubmitButtonBase text='visualizar horários' />
+          </fieldset>
         </FormBase>
       </AppBar>
-      <section className={S.lastSearchsWrap}>
-        <List className={S.listContent} />
-      </section>
+
+      <LastLineBusSearchs isLoading={isLoadingGetLinesSearchs} />
     </section>
   )
 }

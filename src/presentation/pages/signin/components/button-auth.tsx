@@ -27,7 +27,6 @@ const ButtonAuth: React.FC<ButtonAuthProps> = ({
         currentAccount.setCurrentAccount(user)
         history.push('/home')
       }
-      console.log(user)
     } catch (error) {
       setState(oldState => ({ ...oldState, mainError: error.message, provider: '' }))
     } finally {

@@ -1,0 +1,27 @@
+@import '../../../../styles/colors.scss';
+
+.selectItemWrap {
+  padding: 0 12px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+
+  cursor: pointer;
+  transition: background-color ease .3s;
+
+  span {
+    flex: 1;
+  }
+
+  &:hover {
+    background-color: darken($white, 20%);
+  }
+
+  &[data-status="true"] {
+    font-weight: bold;
+  }
+}

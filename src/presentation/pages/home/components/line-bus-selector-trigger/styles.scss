@@ -1,0 +1,30 @@
+@import '../../../../styles/colors.scss';
+
+.selectTriggerWrap {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: $white;
+  cursor: pointer;
+  border: solid 2px transparent;
+  padding-right: 12px;
+  
+  &[data-open="false"] { 
+    border-radius: 8px 8px 0 0;
+    border: solid 2px $primaryLight;
+  }
+
+  .trigger {
+    background-color: transparent;
+    flex: 1;
+    color: $primaryLight;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 8px;
+  }
+  
+  svg {
+    color: $primaryLight;
+  }
+}
